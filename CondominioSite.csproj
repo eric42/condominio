@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70C68092-5754-48A4-9172-C9F723DCAF0D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CondominioSite</RootNamespace>
+    <AssemblyName>CondominioSite</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default1.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="ModuloMorador\CadastrarReservas.aspx" />
+    <Content Include="ModuloMorador\CadastraSugestaoProjeto.aspx" />
+    <Content Include="ModuloMorador\ConsultarAssembliaOff.aspx" />
+    <Content Include="ModuloMorador\ConsultarMorador.aspx" />
+    <Content Include="ModuloMorador\DetalheAssociado.aspx" />
+    <Content Include="ModuloMorador\EditarAnimais.aspx" />
+    <Content Include="ModuloMorador\EditarMorador.aspx" />
+    <Content Include="ModuloMorador\EditarReservas.aspx" />
+    <Content Include="ModuloMorador\EditarVeiculos.aspx" />
+    <Content Include="ModuloMorador\IndexMorador.aspx" />
+    <Content Include="ModuloMorador\ReservasDetalhes.aspx" />
+    <Content Include="ModuloMorador\WebForm1.aspx" />
+    <Content Include="ModuloSindico\CadastrarAssembliaOff.aspx" />
+    <Content Include="ModuloSindico\CadastrarProjeto.aspx" />
+    <Content Include="ModuloSindico\ConsultarProjetos.aspx" />
+    <Content Include="ModuloSindico\EditarProjeto.aspx" />
+    <Content Include="ModuloSindico\EditarProjetos.aspx" />
+    <Content Include="ModuloSindico\IndexSindico.aspx" />
+    <Content Include="ModuloSindico\ProjetoDetalhe.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_sessao.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Condominio.Master.cs">
+      <DependentUpon>Condominio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Condominio.Master.designer.cs">
+      <DependentUpon>Condominio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Default1.aspx.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAssembliaOff.aspx.cs">
+      <DependentUpon>ConsultarAssembliaOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAssembliaOff.aspx.designer.cs">
+      <DependentUpon>ConsultarAssembliaOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarAnimais.aspx.cs">
+      <DependentUpon>EditarAnimais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarAnimais.aspx.designer.cs">
+      <DependentUpon>EditarAnimais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarReservas.aspx.cs">
+      <DependentUpon>EditarReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarReservas.aspx.designer.cs">
+      <DependentUpon>EditarReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarVeiculos.aspx.cs">
+      <DependentUpon>EditarVeiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarVeiculos.aspx.designer.cs">
+      <DependentUpon>EditarVeiculos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\IndexMorador.aspx.cs">
+      <DependentUpon>IndexMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\IndexMorador.aspx.designer.cs">
+      <DependentUpon>IndexMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ReservasDetalhes.aspx.cs">
+      <DependentUpon>ReservasDetalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ReservasDetalhes.aspx.designer.cs">
+      <DependentUpon>ReservasDetalhes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAssembliaOff.aspx.cs">
+      <DependentUpon>CadastrarAssembliaOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAssembliaOff.aspx.designer.cs">
+      <DependentUpon>CadastrarAssembliaOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\EditarProjeto.aspx.cs">
+      <DependentUpon>EditarProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\EditarProjeto.aspx.designer.cs">
+      <DependentUpon>EditarProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\EditarProjetos.aspx.cs">
+      <DependentUpon>EditarProjetos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\EditarProjetos.aspx.designer.cs">
+      <DependentUpon>EditarProjetos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\IndexSindico.aspx.cs">
+      <DependentUpon>IndexSindico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\IndexSindico.aspx.designer.cs">
+      <DependentUpon>IndexSindico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ProjetoDetalhe.aspx.cs">
+      <DependentUpon>ProjetoDetalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ProjetoDetalhe.aspx.designer.cs">
+      <DependentUpon>ProjetoDetalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="_sessao.ascx.cs">
+      <DependentUpon>_sessao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_sessao.ascx.designer.cs">
+      <DependentUpon>_sessao.ascx</DependentUpon>
+    </Compile>
+    <Content Include="ModuloMorador\CadastrarConvidados.aspx" />
+    <Content Include="ModuloMorador\CadastrarMorador.aspx" />
+    <Content Include="ModuloMorador\ConsultarApartamentos.aspx" />
+    <Content Include="ModuloMorador\ConsultarAreas.aspx" />
+    <Content Include="ModuloMorador\ConsultarAssembleia.aspx" />
+    <Content Include="Publico\CadastrarClassificado.aspx" />
+    <Content Include="ModuloMorador\CadastrarEmpregados.aspx" />
+    <Content Include="Publico\CadastrarReceita.aspx" />
+    <Content Include="ModuloMorador\CadastrarReclamacao.aspx" />
+    <Content Include="ModuloMorador\CadastrarVeiculos.aspx" />
+    <Content Include="ModuloMorador\CadastrarVisitantes.aspx" />
+    <Content Include="ModuloMorador\CadastrarVoto.aspx" />
+    <Content Include="ModuloMorador\CadastroAnimais.aspx" />
+    <Content Include="ModuloMorador\ConsultarAnimais.aspx" />
+    <Content Include="ModuloMorador\ConsultarAssembleiaOn.aspx" />
+    <Content Include="Publico\ConsultarClassificado.aspx" />
+    <Content Include="ModuloMorador\ConsultarEmpregados.aspx" />
+    <Content Include="ModuloMorador\ConsultarFuncionarios.aspx" />
+    <Content Include="ModuloMorador\ConsultarManutCor.aspx" />
+    <Content Include="ModuloMorador\ConsultarManutPrev.aspx" />
+    <Content Include="ModuloMorador\ConsultarIdeias.aspx" />
+    <Content Include="ModuloMorador\ConsultarProjetosAprovados.aspx" />
+    <Content Include="Publico\ConsultarReceitas.aspx" />
+    <Content Include="ModuloMorador\ConsultarReclamacao.aspx" />
+    <Content Include="ModuloMorador\ConsultarReservas.aspx" />
+    <Content Include="ModuloMorador\ConsultarReuniao.aspx" />
+    <Content Include="ModuloMorador\ConsultarSugestaoProjeto.aspx" />
+    <Content Include="ModuloMorador\ConsultarVeiculo.aspx" />
+    <Content Include="ModuloMorador\ConsultarVisitantes.aspx" />
+    <Content Include="ModuloMorador\ConsultarVotacao.aspx" />
+    <Content Include="ModuloMorador\DetalheApartamento.aspx" />
+    <Content Include="ModuloMorador\DetalheArea.aspx" />
+    <Content Include="ModuloMorador\DetalheAssembleia.aspx" />
+    <Content Include="ModuloMorador\DetalheClassificado.aspx" />
+    <Content Include="ModuloMorador\DetalheManutCor.aspx" />
+    <Content Include="ModuloMorador\DetalheManutPrev.aspx" />
+    <Content Include="ModuloMorador\DetalheReceita.aspx" />
+    <Content Include="ModuloMorador\DetalheReserva.aspx" />
+    <Content Include="ModuloMorador\DetalheVisitante.aspx" />
+    <Content Include="ModuloMorador\CadastrarReformas.aspx" />
+    <Content Include="ModuloSindico\CadastrarReuniao.aspx" />
+    <Content Include="ModuloSindico\CadastrarApartamentos.aspx" />
+    <Content Include="ModuloSindico\CadastrarAreas.aspx" />
+    <Content Include="ModuloSindico\CadastrarAssembleia.aspx" />
+    <Content Include="ModuloSindico\CadastrarAssembleiaOn.aspx" />
+    <Content Include="ModuloSindico\CadastrarBanco.aspx" />
+    <Content Include="ModuloSindico\CadastrarBlocos.aspx" />
+    <Content Include="ModuloSindico\CadastrarConselho.aspx" />
+    <Content Include="ModuloSindico\CadastrarContas.aspx" />
+    <Content Include="ModuloSindico\CadastrarEmpresa.aspx" />
+    <Content Include="ModuloSindico\CadastrarFuncionario.aspx" />
+    <Content Include="ModuloSindico\CadastrarManutencoesCorretivas.aspx" />
+    <Content Include="ModuloSindico\CadastrarManutencoesPreventivas.aspx" />
+    <Content Include="ModuloSindico\CadastrarPagamentos.aspx" />
+    <Content Include="ModuloSindico\CadastrarSindico.aspx" />
+    <Content Include="ModuloSindico\CadastrarVotacao.aspx" />
+    <Content Include="ModuloSindico\CadastroCondominio.aspx" />
+    <Content Include="ModuloSindico\ConsultarBanco.aspx" />
+    <Content Include="ModuloSindico\ConsultarBlocos.aspx" />
+    <Content Include="ModuloSindico\ConsultarCondominio.aspx" />
+    <Content Include="ModuloSindico\ConsultarConselho.aspx" />
+    <Content Include="ModuloSindico\ConsultarContas.aspx" />
+    <Content Include="ModuloSindico\ConsultarEmpresa.aspx" />
+    <Content Include="ModuloSindico\ConsultarFunc.aspx" />
+    <Content Include="ModuloSindico\ConsultarPagamentos.aspx" />
+    <Content Include="ModuloSindico\ConsultarReformas.aspx" />
+    <Content Include="ModuloSindico\DetalheCondominio.aspx" />
+    <Content Include="ModuloSindico\DetalheContas.aspx" />
+    <Content Include="ModuloSindico\DetalheEmpresa.aspx" />
+    <Content Include="ModuloSindico\DetalheFuncionario.aspx" />
+    <Content Include="ModuloSindico\DetalhePagamento.aspx" />
+    <Content Include="ModuloSindico\DetalheProjeto.aspx" />
+    <Content Include="ModuloSindico\DetalheReclamacao.aspx" />
+    <Content Include="ModuloSindico\DetalheReforma.aspx" />
+    <Content Include="ModuloSindico\DetalheVeiculo.aspx" />
+    <Content Include="App_Code\Condominio1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Condominio1.xsd</DependentUpon>
+    </Content>
+    <Compile Include="Business1\Usuarios.cs" />
+    <Compile Include="Index.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarConvidados.aspx.cs">
+      <DependentUpon>CadastrarConvidados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarConvidados.aspx.designer.cs">
+      <DependentUpon>CadastrarConvidados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarMorador.aspx.cs">
+      <DependentUpon>CadastrarMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarMorador.aspx.designer.cs">
+      <DependentUpon>CadastrarMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarApartamentos.aspx.cs">
+      <DependentUpon>ConsultarApartamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarApartamentos.aspx.designer.cs">
+      <DependentUpon>ConsultarApartamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAreas.aspx.cs">
+      <DependentUpon>ConsultarAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAreas.aspx.designer.cs">
+      <DependentUpon>ConsultarAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAssembleia.aspx.cs">
+      <DependentUpon>ConsultarAssembleia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAssembleia.aspx.designer.cs">
+      <DependentUpon>ConsultarAssembleia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publico\CadastrarClassificado.aspx.cs">
+      <DependentUpon>CadastrarClassificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publico\CadastrarClassificado.aspx.designer.cs">
+      <DependentUpon>CadastrarClassificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarEmpregados.aspx.cs">
+      <DependentUpon>CadastrarEmpregados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarEmpregados.aspx.designer.cs">
+      <DependentUpon>CadastrarEmpregados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publico\CadastrarReceita.aspx.cs">
+      <DependentUpon>CadastrarReceita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publico\CadastrarReceita.aspx.designer.cs">
+      <DependentUpon>CadastrarReceita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarReclamacao.aspx.cs">
+      <DependentUpon>CadastrarReclamacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarReclamacao.aspx.designer.cs">
+      <DependentUpon>CadastrarReclamacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarReservas.aspx.cs">
+      <DependentUpon>CadastrarReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarReservas.aspx.designer.cs">
+      <DependentUpon>CadastrarReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarVeiculos.aspx.cs">
+      <DependentUpon>CadastrarVeiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarVeiculos.aspx.designer.cs">
+      <DependentUpon>CadastrarVeiculos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarVisitantes.aspx.cs">
+      <DependentUpon>CadastrarVisitantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarVisitantes.aspx.designer.cs">
+      <DependentUpon>CadastrarVisitantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarVoto.aspx.cs">
+      <DependentUpon>CadastrarVoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarVoto.aspx.designer.cs">
+      <DependentUpon>CadastrarVoto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastraSugestaoProjeto.aspx.cs">
+      <DependentUpon>CadastraSugestaoProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastraSugestaoProjeto.aspx.designer.cs">
+      <DependentUpon>CadastraSugestaoProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastroAnimais.aspx.cs">
+      <DependentUpon>CadastroAnimais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastroAnimais.aspx.designer.cs">
+      <DependentUpon>CadastroAnimais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAnimais.aspx.cs">
+      <DependentUpon>ConsultarAnimais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAnimais.aspx.designer.cs">
+      <DependentUpon>ConsultarAnimais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAssembleiaOn.aspx.cs">
+      <DependentUpon>ConsultarAssembleiaOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarAssembleiaOn.aspx.designer.cs">
+      <DependentUpon>ConsultarAssembleiaOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publico\ConsultarClassificado.aspx.cs">
+      <DependentUpon>ConsultarClassificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publico\ConsultarClassificado.aspx.designer.cs">
+      <DependentUpon>ConsultarClassificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarEmpregados.aspx.cs">
+      <DependentUpon>ConsultarEmpregados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarEmpregados.aspx.designer.cs">
+      <DependentUpon>ConsultarEmpregados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarFuncionarios.aspx.cs">
+      <DependentUpon>ConsultarFuncionarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarFuncionarios.aspx.designer.cs">
+      <DependentUpon>ConsultarFuncionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarManutCor.aspx.cs">
+      <DependentUpon>ConsultarManutCor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarManutCor.aspx.designer.cs">
+      <DependentUpon>ConsultarManutCor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarManutPrev.aspx.cs">
+      <DependentUpon>ConsultarManutPrev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarManutPrev.aspx.designer.cs">
+      <DependentUpon>ConsultarManutPrev.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarMorador.aspx.cs">
+      <DependentUpon>ConsultarMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarMorador.aspx.designer.cs">
+      <DependentUpon>ConsultarMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarIdeias.aspx.cs">
+      <DependentUpon>ConsultarIdeias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarIdeias.aspx.designer.cs">
+      <DependentUpon>ConsultarIdeias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarProjetosAprovados.aspx.cs">
+      <DependentUpon>ConsultarProjetosAprovados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarProjetosAprovados.aspx.designer.cs">
+      <DependentUpon>ConsultarProjetosAprovados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publico\ConsultarReceitas.aspx.cs">
+      <DependentUpon>ConsultarReceitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publico\ConsultarReceitas.aspx.designer.cs">
+      <DependentUpon>ConsultarReceitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarReclamacao.aspx.cs">
+      <DependentUpon>ConsultarReclamacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarReclamacao.aspx.designer.cs">
+      <DependentUpon>ConsultarReclamacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarReservas.aspx.cs">
+      <DependentUpon>ConsultarReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarReservas.aspx.designer.cs">
+      <DependentUpon>ConsultarReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarReuniao.aspx.cs">
+      <DependentUpon>ConsultarReuniao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarReuniao.aspx.designer.cs">
+      <DependentUpon>ConsultarReuniao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarSugestaoProjeto.aspx.cs">
+      <DependentUpon>ConsultarSugestaoProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarSugestaoProjeto.aspx.designer.cs">
+      <DependentUpon>ConsultarSugestaoProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarVeiculo.aspx.cs">
+      <DependentUpon>ConsultarVeiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarVeiculo.aspx.designer.cs">
+      <DependentUpon>ConsultarVeiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarVisitantes.aspx.cs">
+      <DependentUpon>ConsultarVisitantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarVisitantes.aspx.designer.cs">
+      <DependentUpon>ConsultarVisitantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarVotacao.aspx.cs">
+      <DependentUpon>ConsultarVotacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\ConsultarVotacao.aspx.designer.cs">
+      <DependentUpon>ConsultarVotacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheApartamento.aspx.cs">
+      <DependentUpon>DetalheApartamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheApartamento.aspx.designer.cs">
+      <DependentUpon>DetalheApartamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheArea.aspx.cs">
+      <DependentUpon>DetalheArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheArea.aspx.designer.cs">
+      <DependentUpon>DetalheArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheAssociado.aspx.cs">
+      <DependentUpon>DetalheAssociado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheAssociado.aspx.designer.cs">
+      <DependentUpon>DetalheAssociado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheAssembleia.aspx.cs">
+      <DependentUpon>DetalheAssembleia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheAssembleia.aspx.designer.cs">
+      <DependentUpon>DetalheAssembleia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheClassificado.aspx.cs">
+      <DependentUpon>DetalheClassificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheClassificado.aspx.designer.cs">
+      <DependentUpon>DetalheClassificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheManutCor.aspx.cs">
+      <DependentUpon>DetalheManutCor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheManutCor.aspx.designer.cs">
+      <DependentUpon>DetalheManutCor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheManutPrev.aspx.cs">
+      <DependentUpon>DetalheManutPrev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheManutPrev.aspx.designer.cs">
+      <DependentUpon>DetalheManutPrev.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheReceita.aspx.cs">
+      <DependentUpon>DetalheReceita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheReceita.aspx.designer.cs">
+      <DependentUpon>DetalheReceita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheReserva.aspx.cs">
+      <DependentUpon>DetalheReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheReserva.aspx.designer.cs">
+      <DependentUpon>DetalheReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheVisitante.aspx.cs">
+      <DependentUpon>DetalheVisitante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\DetalheVisitante.aspx.designer.cs">
+      <DependentUpon>DetalheVisitante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarMorador.aspx.cs">
+      <DependentUpon>EditarMorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\EditarMorador.aspx.designer.cs">
+      <DependentUpon>EditarMorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarReformas.aspx.cs">
+      <DependentUpon>CadastrarReformas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloMorador\CadastrarReformas.aspx.designer.cs">
+      <DependentUpon>CadastrarReformas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarReuniao.aspx.cs">
+      <DependentUpon>CadastrarReuniao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarReuniao.aspx.designer.cs">
+      <DependentUpon>CadastrarReuniao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarApartamentos.aspx.cs">
+      <DependentUpon>CadastrarApartamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarApartamentos.aspx.designer.cs">
+      <DependentUpon>CadastrarApartamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAreas.aspx.cs">
+      <DependentUpon>CadastrarAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAreas.aspx.designer.cs">
+      <DependentUpon>CadastrarAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAssembleia.aspx.cs">
+      <DependentUpon>CadastrarAssembleia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAssembleia.aspx.designer.cs">
+      <DependentUpon>CadastrarAssembleia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAssembleiaOn.aspx.cs">
+      <DependentUpon>CadastrarAssembleiaOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarAssembleiaOn.aspx.designer.cs">
+      <DependentUpon>CadastrarAssembleiaOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarBanco.aspx.cs">
+      <DependentUpon>CadastrarBanco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarBanco.aspx.designer.cs">
+      <DependentUpon>CadastrarBanco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarBlocos.aspx.cs">
+      <DependentUpon>CadastrarBlocos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarBlocos.aspx.designer.cs">
+      <DependentUpon>CadastrarBlocos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarConselho.aspx.cs">
+      <DependentUpon>CadastrarConselho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarConselho.aspx.designer.cs">
+      <DependentUpon>CadastrarConselho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarContas.aspx.cs">
+      <DependentUpon>CadastrarContas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarContas.aspx.designer.cs">
+      <DependentUpon>CadastrarContas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarEmpresa.aspx.cs">
+      <DependentUpon>CadastrarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarEmpresa.aspx.designer.cs">
+      <DependentUpon>CadastrarEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarFuncionario.aspx.cs">
+      <DependentUpon>CadastrarFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarFuncionario.aspx.designer.cs">
+      <DependentUpon>CadastrarFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarManutencoesCorretivas.aspx.cs">
+      <DependentUpon>CadastrarManutencoesCorretivas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarManutencoesCorretivas.aspx.designer.cs">
+      <DependentUpon>CadastrarManutencoesCorretivas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarManutencoesPreventivas.aspx.cs">
+      <DependentUpon>CadastrarManutencoesPreventivas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarManutencoesPreventivas.aspx.designer.cs">
+      <DependentUpon>CadastrarManutencoesPreventivas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarPagamentos.aspx.cs">
+      <DependentUpon>CadastrarPagamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarPagamentos.aspx.designer.cs">
+      <DependentUpon>CadastrarPagamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarProjeto.aspx.cs">
+      <DependentUpon>CadastrarProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarProjeto.aspx.designer.cs">
+      <DependentUpon>CadastrarProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarSindico.aspx.cs">
+      <DependentUpon>CadastrarSindico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarSindico.aspx.designer.cs">
+      <DependentUpon>CadastrarSindico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarVotacao.aspx.cs">
+      <DependentUpon>CadastrarVotacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastrarVotacao.aspx.designer.cs">
+      <DependentUpon>CadastrarVotacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastroCondominio.aspx.cs">
+      <DependentUpon>CadastroCondominio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\CadastroCondominio.aspx.designer.cs">
+      <DependentUpon>CadastroCondominio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarBanco.aspx.cs">
+      <DependentUpon>ConsultarBanco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarBanco.aspx.designer.cs">
+      <DependentUpon>ConsultarBanco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarBlocos.aspx.cs">
+      <DependentUpon>ConsultarBlocos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarBlocos.aspx.designer.cs">
+      <DependentUpon>ConsultarBlocos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarCondominio.aspx.cs">
+      <DependentUpon>ConsultarCondominio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarCondominio.aspx.designer.cs">
+      <DependentUpon>ConsultarCondominio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarConselho.aspx.cs">
+      <DependentUpon>ConsultarConselho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarConselho.aspx.designer.cs">
+      <DependentUpon>ConsultarConselho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarContas.aspx.cs">
+      <DependentUpon>ConsultarContas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarContas.aspx.designer.cs">
+      <DependentUpon>ConsultarContas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarEmpresa.aspx.cs">
+      <DependentUpon>ConsultarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarEmpresa.aspx.designer.cs">
+      <DependentUpon>ConsultarEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarFunc.aspx.cs">
+      <DependentUpon>ConsultarFunc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarFunc.aspx.designer.cs">
+      <DependentUpon>ConsultarFunc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarPagamentos.aspx.cs">
+      <DependentUpon>ConsultarPagamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarPagamentos.aspx.designer.cs">
+      <DependentUpon>ConsultarPagamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarProjetos.aspx.cs">
+      <DependentUpon>ConsultarProjetos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarProjetos.aspx.designer.cs">
+      <DependentUpon>ConsultarProjetos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarReformas.aspx.cs">
+      <DependentUpon>ConsultarReformas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\ConsultarReformas.aspx.designer.cs">
+      <DependentUpon>ConsultarReformas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheCondominio.aspx.cs">
+      <DependentUpon>DetalheCondominio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheCondominio.aspx.designer.cs">
+      <DependentUpon>DetalheCondominio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheContas.aspx.cs">
+      <DependentUpon>DetalheContas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheContas.aspx.designer.cs">
+      <DependentUpon>DetalheContas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheEmpresa.aspx.cs">
+      <DependentUpon>DetalheEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheEmpresa.aspx.designer.cs">
+      <DependentUpon>DetalheEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheFuncionario.aspx.cs">
+      <DependentUpon>DetalheFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheFuncionario.aspx.designer.cs">
+      <DependentUpon>DetalheFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalhePagamento.aspx.cs">
+      <DependentUpon>DetalhePagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalhePagamento.aspx.designer.cs">
+      <DependentUpon>DetalhePagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheProjeto.aspx.cs">
+      <DependentUpon>DetalheProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheProjeto.aspx.designer.cs">
+      <DependentUpon>DetalheProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheReclamacao.aspx.cs">
+      <DependentUpon>DetalheReclamacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheReclamacao.aspx.designer.cs">
+      <DependentUpon>DetalheReclamacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheReforma.aspx.cs">
+      <DependentUpon>DetalheReforma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheReforma.aspx.designer.cs">
+      <DependentUpon>DetalheReforma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheVeiculo.aspx.cs">
+      <DependentUpon>DetalheVeiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloSindico\DetalheVeiculo.aspx.designer.cs">
+      <DependentUpon>DetalheVeiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Code\Condominio1.xsc">
+      <DependentUpon>Condominio1.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\Condominio1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Condominio1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Code\Condominio1.xss">
+      <DependentUpon>Condominio1.xsd</DependentUpon>
+    </None>
+    <Content Include="Condominio.Master" />
+    <Content Include="ModuloMorador\Site1.Master" />
+    <Content Include="ModuloSindico\Site2.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="css\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="slider\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1074</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
