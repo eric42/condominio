@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace CondominioSite.ModuloMorador
+{
+    public partial class CadastrarClassificado : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+          
+                Usuarios User = new Usuarios();
+                User = (Usuarios)Session["usuario"];
+
+                if (User.Login == null)
+            {
+                Response.Redirect("~/login.aspx");
+            }
+
+            string ope = Request.QueryString["ope"];
+
+            if (ope == "E")
+            {
+                Int32 id = Int32.Parse(Request.QueryString["id"]);
+                btnCadastrar.Text = "Editar";
+
+                txtTitulo.Text = SqlDataSource1.SelectCommand[0].ToString();
+                txtDescricao.Text = SqlDataSource1.SelectCommand[1].ToString();
+                txtValor.Text = SqlDataSource1.SelectCommand[2].ToString();
+                txtDataOferta.Text = SqlDataSource1.SelectCommand[3].ToString();
+                txtValidade.Text = SqlDataSource1.SelectCommand[4].ToString();
+                txtFoto.Text = SqlDataSource1.SelectCommand[5].ToString();
+                rblNegocio.SelectedItem.Value = SqlDataSource1.SelectCommand[6].ToString();
+                txtFlag.Text = SqlDataSource1.SelectCommand[7].ToString();
+            }else{
+                btnCadastrar.Text = "Cadastrar";
+
+                txtTitulo.Text = "";
+                txtDescricao.Text = "";
+                txtValor.Text = "";
+                txtDataOferta.Text = "";
+                txtValidade.Text = "";
+                txtFoto.Text = "";
+                txtFlag.Text = "";
+            }
+        }
+
+        protected void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            
+            
+            string ope = Request.QueryString["ope"];
+
+            Usuarios User = new Usuarios();
+            User = (Usuarios)Session["usuario"];
+
+            if (ope != "E")
+
+            {
+                SqlDataSource1.InsertParameters["ClassiFlag"].DefaultValue = txtFlag.Text;
+                SqlDataSource1.InsertParameters["ClassiTitulo"].DefaultValue = txtTitulo.Text;
+                SqlDataSource1.InsertParameters["ClassiDesc"].DefaultValue = txtDescricao.Text;
+                SqlDataSource1.InsertParameters["ClassiValor"].DefaultValue = txtValor.Text;
+                SqlDataSource1.InsertParameters["ClassiValidade"].DefaultValue = txtValidade.Text;
+                SqlDataSource1.InsertParameters["ClassiData"].DefaultValue = txtDataOferta.Text;
+                SqlDataSource1.InsertParameters["ClassiFoto"].DefaultValue = txtFoto.Text;
+                SqlDataSource1.InsertParameters["ClassiNegociado"].DefaultValue = rblNegocio.SelectedItem.Value;
+                SqlDataSource1.InsertParameters["Login"].DefaultValue = User.Login;
+                SqlDataSource1.InsertParameters["IDCond"].DefaultValue = Convert.ToString(User.Cond);
+                
+                SqlDataSource1.Insert();
+            }
+            else
+            {
+                SqlDataSource1.UpdateParameters["ClassiFlag"].DefaultValue = txtFlag.Text;
+                SqlDataSource1.UpdateParameters["ClassiTitulo"].DefaultValue = txtTitulo.Text;
+                SqlDataSource1.UpdateParameters["ClassiDesc"].DefaultValue = txtDescricao.Text;
+                SqlDataSource1.UpdateParameters["ClassiValor"].DefaultValue = txtValor.Text;
+                SqlDataSource1.UpdateParameters["ClassiValidade"].DefaultValue = txtValidade.Text;
+                SqlDataSource1.UpdateParameters["ClassiData"].DefaultValue = txtDataOferta.Text;
+                SqlDataSource1.UpdateParameters["ClassiFoto"].DefaultValue = txtFoto.Text;
+                SqlDataSource1.UpdateParameters["ClassiNegociado"].DefaultValue = rblNegocio.SelectedItem.Value;
+
+
+                SqlDataSource1.Update();
+            }
+            }
+    }
+}

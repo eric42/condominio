@@ -1,0 +1,15 @@
+C:\xampp\htdocs\CondominioSite\CondominioSite\bin\CondominioSite.dll
+C:\xampp\htdocs\CondominioSite\CondominioSite\bin\CondominioSite.pdb
+C:\xampp\htdocs\CondominioSite\CondominioSite\obj\Debug\CondominioSite.dll
+C:\xampp\htdocs\CondominioSite\CondominioSite\obj\Debug\CondominioSite.pdb
+C:\xampp\htdocs\CondominioSite\CondominioSite\bin\CondominioSite.dll.config
+C:\xampp\htdocs\CondominioSite\CondominioSite\obj\Debug\CondominioSite.csprojResolveAssemblyReference.cache
+C:\Edson\Site\14jan2016\SiteTemplate\Bootstrap4\CondominioSite\bin\CondominioSite.dll.config
+C:\Edson\Site\14jan2016\SiteTemplate\Bootstrap4\CondominioSite\bin\CondominioSite.dll
+C:\Edson\Site\14jan2016\SiteTemplate\Bootstrap4\CondominioSite\bin\CondominioSite.pdb
+C:\Edson\Site\14jan2016\SiteTemplate\Bootstrap4\CondominioSite\obj\Debug\CondominioSite.csprojResolveAssemblyReference.cache
+C:\Edson\Site\14jan2016\SiteTemplate\Bootstrap4\CondominioSite\obj\Debug\CondominioSite.dll
+C:\Edson\Site\14jan2016\SiteTemplate\Bootstrap4\CondominioSite\obj\Debug\CondominioSite.pdb
+C:\Edson\Site\14jan2016\Bootstrap4\CondominioSite\obj\Debug\CondominioSite.csprojResolveAssemblyReference.cache
+C:\Edson\Site\14jan2016\Bootstrap4\CondominioSite\obj\Debug\CondominioSite.dll
+C:\Edson\Site\14jan2016\Bootstrap4\CondominioSite\obj\Debug\CondominioSite.pdb
