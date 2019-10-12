@@ -12,14 +12,6 @@ namespace CondominioSite.ModuloSindico
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Usuarios User = new Usuarios();
-            User = (Usuarios)Session["usuario"];
-
-            if (User.Login == null)
-            {
-                Response.Redirect("~/login.aspx");
-            }
-
         }
 
         protected void btnCadastrar_Click(object sender, EventArgs e)

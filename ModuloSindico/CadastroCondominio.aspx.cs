@@ -15,11 +15,10 @@ namespace CondominioSite.ModuloSindico
             User = (Usuarios)Session["usuario"];
 
             if (User.Login == null)
-
             {
                 Response.Redirect("~/login.aspx");
             }
-
+            
             string ope = Request.QueryString["ope"];
 
             if (ope == "E")
@@ -59,11 +58,9 @@ namespace CondominioSite.ModuloSindico
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
-            
             string ope = Request.QueryString["ope"];
 
             if (ope != "E")
-
             {
                 SqlDataSource1.InsertParameters["CondNome"].DefaultValue = txtNome.Text;
                 SqlDataSource1.InsertParameters["CondEnd"].DefaultValue = txtEndereco.Text;

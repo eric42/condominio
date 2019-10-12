@@ -15,7 +15,6 @@ namespace CondominioSite.ModuloSindico
             User = (Usuarios)Session["usuario"];
 
             if (User.Login == null)
-
             {
                 Response.Redirect("~/login.aspx");
             }
@@ -57,7 +56,7 @@ namespace CondominioSite.ModuloSindico
 
             string ope = Request.QueryString["ope"];
 
-            if (ope != "E")
+             if (ope != "E")
             {
                 SqlDataSource1.InsertParameters["EmpresaNome"].DefaultValue = ddlEmpresa.SelectedItem.Value;
                 SqlDataSource1.InsertParameters["NumeroNf"].DefaultValue = ddlNf.SelectedItem.Value;

@@ -11,7 +11,6 @@ namespace CondominioSite.ModuloSindico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             Usuarios User = new Usuarios();
             User = (Usuarios)Session["usuario"];
 
@@ -19,7 +18,6 @@ namespace CondominioSite.ModuloSindico
             {
                 Response.Redirect("~/login.aspx");
             }
-
 
             string ope = Request.QueryString["ope"];
 
@@ -52,9 +50,12 @@ namespace CondominioSite.ModuloSindico
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
 
+            Usuarios User = new Usuarios();
+            User = (Usuarios)Session["usuario"];
+
             string ope = Request.QueryString["ope"];
 
-            if (ope != "E")
+             if (ope != "E")
             {
                 SqlDataSource1.InsertParameters["UnitNumber"].DefaultValue = txtNum.Text;
                 SqlDataSource1.InsertParameters["UnitGaragem"].DefaultValue = txtGaragem.Text;

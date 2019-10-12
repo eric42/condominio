@@ -11,7 +11,6 @@ namespace CondominioSite.ModuloSindico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             Usuarios User = new Usuarios();
             User = (Usuarios)Session["usuario"];
 
@@ -19,7 +18,6 @@ namespace CondominioSite.ModuloSindico
             {
                 Response.Redirect("~/login.aspx");
             }
-
 
             string ope = Request.QueryString["ope"];
 
@@ -58,22 +56,25 @@ namespace CondominioSite.ModuloSindico
         {
 
              string ope = Request.QueryString["ope"];
+            Usuarios User = new Usuarios();
+            User = (Usuarios)Session["usuario"];
 
-             if (ope != "E")
-            {
-                SqlDataSource1.InsertParameters["BancoNome"].DefaultValue = txtBanco.Text;
-                SqlDataSource1.InsertParameters["BancoAgencia"].DefaultValue = txtAgencia.Text;
-                SqlDataSource1.InsertParameters["BancoConta"].DefaultValue = txtConta.Text;
-                SqlDataSource1.InsertParameters["BancoGerente"].DefaultValue = txtGerente.Text;
-                SqlDataSource1.InsertParameters["BancoTel"].DefaultValue = txtTelefone.Text;
-                SqlDataSource1.InsertParameters["BancoEmail"].DefaultValue = txtEmail.Text;
-                SqlDataSource1.InsertParameters["BancoResponsavel"].DefaultValue = txtResponsavel.Text;
-                SqlDataSource1.InsertParameters["IDCond"].DefaultValue = Convert.ToString(User.Cond);
-                SqlDataSource1.InsertParameters["BancoCartDeb"].DefaultValue = txtCartDeb.Text;
-                SqlDataSource1.InsertParameters["BancoCartCre"].DefaultValue = txtCartCred.Text;
 
-                SqlDataSource1.Insert();
-            }
+            if (ope != "E")
+             {
+                 SqlDataSource1.InsertParameters["BancoNome"].DefaultValue = txtBanco.Text;
+                 SqlDataSource1.InsertParameters["BancoAgencia"].DefaultValue = txtAgencia.Text;
+                 SqlDataSource1.InsertParameters["BancoConta"].DefaultValue = txtConta.Text;
+                 SqlDataSource1.InsertParameters["BancoGerente"].DefaultValue = txtGerente.Text;
+                 SqlDataSource1.InsertParameters["BancoTel"].DefaultValue = txtTelefone.Text;
+                 SqlDataSource1.InsertParameters["BancoEmail"].DefaultValue = txtEmail.Text;
+                 SqlDataSource1.InsertParameters["BancoResponsavel"].DefaultValue = txtResponsavel.Text;
+                 SqlDataSource1.InsertParameters["IDCond"].DefaultValue = Convert.ToString(User.Cond);
+                 SqlDataSource1.InsertParameters["BancoCartDeb"].DefaultValue = txtCartDeb.Text;
+                 SqlDataSource1.InsertParameters["BancoCartCre"].DefaultValue = txtCartCred.Text;
+
+                 SqlDataSource1.Insert();
+             }
              else
              {
                  SqlDataSource1.UpdateParameters["BancoNome"].DefaultValue = txtBanco.Text;

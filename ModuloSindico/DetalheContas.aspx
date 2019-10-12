@@ -88,7 +88,7 @@
                         Visible="False" />
                 </td>
                 <td class="style7" colspan="2">
-                    <asp:Button ID="btnVoltar" runat="server" onclick="Button2_Click" 
+                    <asp:Button ID="btnVoltar" runat="server"
                         Text="Voltar" />
                 </td>
             </tr>

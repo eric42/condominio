@@ -15,7 +15,6 @@ namespace CondominioSite.ModuloSindico
             User = (Usuarios)Session["usuario"];
 
             if (User.Login == null)
-
             {
                 Response.Redirect("~/login.aspx");
             }
@@ -51,7 +50,6 @@ namespace CondominioSite.ModuloSindico
             string ope = Request.QueryString["ope"];
 
              if (ope != "E")
-
             {
                 SqlDataSource1.InsertParameters["Data"].DefaultValue = txtData.Text;
                 SqlDataSource1.InsertParameters["Local"].DefaultValue = txtLocal.Text;

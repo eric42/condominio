@@ -11,15 +11,15 @@ namespace CondominioSite.ModuloSindico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Usuarios User = new Usuarios();
-            User = (Usuarios)Session["usuario"];
-
-            if (User.Login == null)
+           /* if (User.Login == null)
+            {
+                Usuarios User = new Usuarios();
+                User = (Usuarios)Session["usuario"];
+            }
+            else
             {
                 Response.Redirect("~/login.aspx");
-            }
-
+            }*/
         }
 
         protected void btnPesquisar_Click(object sender, EventArgs e)

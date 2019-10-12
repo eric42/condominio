@@ -36,7 +36,7 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                     <asp:GridView ID="gdvFuncionarios" runat="server" AutoGenerateColumns="False" 
-                        DataSourceID="SqlDataSource1" DataKeyNames="IDCondFunc" > 
+                        DataSourceID="SqlDataSource1" DataKeyNames="IDCondFunc" >
                         <Columns>
                             <asp:BoundField DataField="Funcionario" HeaderText="Funcionario" 
                                 SortExpression="Funcionario" />

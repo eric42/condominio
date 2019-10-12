@@ -126,7 +126,7 @@
                 </td>
                 <td>
                     <asp:Button ID="btnVoltar" runat="server" 
-                    Text="Voltar" />
+                        Text="Voltar" />
                 </td>
             </tr>
         </table>

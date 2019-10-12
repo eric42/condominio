@@ -11,6 +11,7 @@ namespace CondominioSite.ModuloSindico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Usuarios User = new Usuarios();
             User = (Usuarios)Session["usuario"];
 

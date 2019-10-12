@@ -28,7 +28,7 @@
                         SelectCommand="SELECT Usuario.Nome, Bloco.Nome AS Bloco, Unit.UnitNumber, Reforma.DataIni, Reforma.DataFim, Reforma.IDReforma FROM Reforma INNER JOIN Bloco ON Reforma.IDBloco = Bloco.IDBloco INNER JOIN Unit ON Bloco.IDUnit = Unit.IDUnit AND Bloco.IDBloco = Unit.IDBloco INNER JOIN Usuario ON Bloco.IDBloco = Usuario.IDBloco AND Unit.Login = Usuario.Login AND Unit.IDUnit = Usuario.IDUnit">
                     </asp:SqlDataSource>
                     <asp:GridView ID="gdvReforma" runat="server" AutoGenerateColumns="False" 
-                        DataKeyNames="IDReforma" DataSourceID="SqlDataSource1" style="width: 476px">
+                        DataKeyNames="IDReforma" DataSourceID="SqlDataSource1"  style="width: 476px">
                         <Columns>
                             <asp:BoundField DataField="Nome" HeaderText="Morador" SortExpression="Nome" />
                             <asp:BoundField DataField="Bloco" HeaderText="Bloco" SortExpression="Bloco" />

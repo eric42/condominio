@@ -95,7 +95,7 @@
                     <asp:Label ID="Label6" runat="server" Text="Votacao:"></asp:Label>
                 </td>
                 <td>
-                   <asp:TextBox ID="txtVotacao" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtVotacao" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>

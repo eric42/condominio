@@ -173,7 +173,7 @@ namespace CondominioSite.ModuloSindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSindico;
-                      
+        
         /// <summary>
         /// Label10 control.
         /// </summary>

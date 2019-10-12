@@ -15,7 +15,6 @@ namespace CondominioSite.ModuloSindico
             User = (Usuarios)Session["usuario"];
 
             if (User.Login == null)
-
             {
                 Response.Redirect("~/login.aspx");
             }
@@ -87,6 +86,7 @@ namespace CondominioSite.ModuloSindico
                 SqlDataSource1.UpdateParameters["ManuArea"].DefaultValue = ddlArea.SelectedItem.Value;
                 SqlDataSource1.UpdateParameters["Login"].DefaultValue = User.Login;
                 SqlDataSource1.UpdateParameters["IDCond"].DefaultValue = Convert.ToString(User.Cond);
+
                 SqlDataSource1.Update();
             }
         }

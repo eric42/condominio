@@ -20,7 +20,6 @@ namespace CondominioSite.ModuloSindico
                 Response.Redirect("~/login.aspx");
             }
 
-
             string ope = Request.QueryString["ope"];
 
             if (ope == "E")
@@ -53,6 +52,8 @@ namespace CondominioSite.ModuloSindico
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {           
             string ope = Request.QueryString["ope"];
+            Usuarios User = new Usuarios();
+            User = (Usuarios)Session["usuario"];
 
             if (ope != "E")
             {

@@ -14,7 +14,7 @@ namespace CondominioSite.ModuloSindico
 
             Usuarios User = new Usuarios();
             User = (Usuarios)Session["usuario"];
-
+            
             if (User.Login == null)
             {
                 Response.Redirect("~/login.aspx");
@@ -28,7 +28,7 @@ namespace CondominioSite.ModuloSindico
 
             SqlDataSource1.SelectParameters["DataIni"].DefaultValue = txtPesquisar.Text;
             SqlDataSource1.SelectParameters["IDCond"].DefaultValue = Convert.ToString(User.Cond);
-
+            
             gdvReforma.DataBind();
         }
 

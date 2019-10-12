@@ -15,7 +15,6 @@ namespace CondominioSite.ModuloSindico
             User = (Usuarios)Session["usuario"];
 
             if (User.Login == null)
-
             {
                 Response.Redirect("~/login.aspx");
             }
